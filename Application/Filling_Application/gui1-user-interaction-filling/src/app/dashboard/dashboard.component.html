@@ -1,0 +1,73 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/img/log.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      Filling Application 
+    </a>
+    <div class="form-inline my-2 my-lg-0">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="openLg(longContent)">interupt</button>
+         </div>
+  </nav>
+
+<!-- modal -->
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">User Interuption </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">User Interuption</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <user-interaction (closeModal)="modal.close('Close click')"></user-interaction>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
+  
+<!-- status indicator  -->
+<div class="col-md " >
+  <span *ngIf="is_connected" class="dot-success float-right" style="margin-top: 1rem;"></span>
+  <span *ngIf="!is_connected && !is_offline" class="dot-danger float-right" style="margin-top: 1rem;"></span>  
+  <span *ngIf="is_offline" class="dot-warning float-right" style="margin-top: 1rem;"></span>  
+</div>
+
+<div class="row">
+  <div class="col-md"><h1 class="display-4">Monitoring Status </h1></div>
+  <div class="col-md"></div>
+  
+</div>
+
+
+<div class="row">
+  <div class="col">
+      <div class="mx-auto w-50 p-3 bg-dark text-white text-center">
+       
+          <span> <code>Message : </code> {{_message}}</span>
+          <div *ngIf="_message_2" class="d-flex justify-content-center">
+            <div class="p-2">{{_message_2}}</div>
+            <div class="p-2">{{_message_3}}</div>
+          
+          </div>
+
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

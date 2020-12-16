@@ -1,0 +1,99 @@
+<div class="container" style="margin-top: 3rem;">
+    <div class="row">
+      <div class="col-md">
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+              
+                <tbody> 
+                  <tr>
+                    <td>System Status</td>
+                    <td *ngIf="is_connected">Connected</td>
+                    <td *ngIf="!is_connected">Unkown</td>
+                   </tr>
+                  <tr>
+                    <td>Cup Size</td>
+                    <td *ngIf="cup_size!='init'">{{cup_size}}</td>
+                    <td *ngIf="cup_size=='init'">Unkown</td>
+                  </tr>
+                  <tr>
+                    <td>Is Cup Presence</td>
+                    <td *ngIf="is_cup_presence">True</td>
+                    <td *ngIf="!is_cup_presence">Unkown</td>
+                  </tr>
+                  <tr>
+                    <td>Cup Size (Letters)</td>
+                    <td >{{cup_size_letr}}</td>         
+                  </tr>
+                  <tr>
+                    <td>Product Availability</td>
+                    <td >{{prod_avail}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        
+        
+      </div>
+      <div class="col-md">
+            <div class="card">
+                    <div class="card-body">
+                     Process ID  <h5 class="card-title">2335f-324</h5>
+                    </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Process progress</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Filling Progress  {{process_status}}</h6>
+                           
+                            <div *ngIf="is_started" class="spinner-grow" role="status">
+                                  <span class="sr-only">Loading...</span> 
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h2 class="card-title">{{process_percent}}%</h2>
+                            <!-- <h6 class="card-subtitle mb-2 text-muted">Filing (on process)</h6> -->
+                           
+                          </div>
+                    </div>
+                </div>
+                   
+            </div>
+      </div>
+      
+    </div>
+    <div class="row" style="margin-top: 3rem;">
+            <div class="col-md-12">
+            <div class="card text-center">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h5 class="card-title">Power  Management</h5>
+                                <h6>{{_power_value}} %</h6>
+                                
+                            </div>
+                            <div class="col-sm">
+                                <h5 class="card-title">Waste Management</h5>
+                                <h6>2 Cups</h6>
+                                
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="card-footer text-muted">
+                     Application Version 2.0
+                    </div>
+        </div>
+    </div>
+    </div>
+    
+
+  </div>

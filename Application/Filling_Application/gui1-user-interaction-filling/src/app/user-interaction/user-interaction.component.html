@@ -1,0 +1,24 @@
+
+
+   <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Change Count</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Count">
+      </div>
+     
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Reduce Power</label>
+      <input type="text" class="form-control" id="inputAddress" >
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Clear Waste</label>
+      <input type="text" class="form-control" id="inputAddress2" disabled >
+    </div>
+  
+    <button type="submit" class="btn btn-primary" (click)="resolveChange()">Resolve Changes</button>
+    <button type="submit" class="btn btn-danger" (click)="Stop_()">Stop</button>
+    <button type="submit" class="btn btn-success" (click)="Start_()">Start</button>
+  </form>
+   
